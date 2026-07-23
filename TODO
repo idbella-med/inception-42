@@ -1,10 +1,5 @@
-Project TODO
-
-- [ ] Add a real Makefile at the repository root that builds and starts the stack from `make`
-- [ ] Fix `srcs/docker-compose.yml` volumes so they satisfy the named-volume requirement without bind mounts
-- [ ] Replace the current nginx reverse-proxy setup with a correct FastCGI configuration for WordPress + PHP-FPM
-- [ ] Complete WordPress bootstrap and configuration for the MariaDB-backed stack
-- [ ] Expand `README.md` so it fully covers the required project description and comparisons
-- [ ] Expand `USER_DOC.md` with start/stop, access, credentials, and health-check instructions
-- [ ] Expand `DEV_DOC.md` with setup, build, management, and data persistence details
-- [ ] Validate the stack locally once Docker permissions are available
+- [] config mariadb {just change bind-address in mariadb.sh}
+- [] undrstand ssl handshake 
+- [] how to use mariadb
+- [] how to use docker compose
+- [] complete nginx and mariadb

@@ -1,12 +1,11 @@
-FROM debian:stable-slim
+FROM debian:bookworm
 
-RUN apt-get update \
-	&& apt-get install -y --no-install-recommends mariadb-server ca-certificates
+RUN apt update \
+	&& apt install -y mariadb-server mariadb-client
 
-COPY ./tools/mariadb_entrypoint.sh /usr/local/bin/mariadb_entrypoint.sh
-RUN chmod +x /usr/local/bin/mariadb_entrypoint.sh
 
-VOLUME ["/var/lib/mysql"]
-EXPOSE 3306
+COPY ./tools/mariadb.sh /usr/local/bin/mariadb.sh
 
-CMD ["/usr/local/bin/mariadb_entrypoint.sh"]
+RUN chmod +x /usr/local/bin/mariadb.sh
+
+CMD ["/usr/local/bin/mariadb.sh"]
