@@ -1,5 +1,6 @@
-- [] config mariadb {just change bind-address in mariadb.sh}
+- [x] config mariadb {just change bind-address in mariadb.sh}
 - [] undrstand ssl handshake 
 - [] how to use mariadb
-- [] how to use docker compose
-- [] complete nginx and mariadb
+- [x] how to use docker compose
+- [x] complete nginx and mariadb
+- [x] complete wordpress

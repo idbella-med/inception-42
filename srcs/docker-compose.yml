@@ -4,26 +4,36 @@ services:
       context: ./requirements/mariadb
     image: mariadb
     container_name: mariadb
-    restart: always
+    restart: on-failure
     networks:
       - inception
     env_file:
       - .env
-    secrets:
-      - db_password
-      - db_root_password
     volumes:
       - db_data:/var/lib/mysql
+  nginx:
+      build:
+        context: ./requirements/nginx
+      image: nginx
+      container_name: nginx
+      restart: on-failure
+      depends-on:
+        - mariadb
+      networks:
+        - inception
+      env_file:
+        - .env
+      ports:
+        - "443:443"
 
-
-secrets:
-  db_password:
-    file: ../secrets/db_password.txt
-  db_root_password:
-    file: ../secrets/db_root_password.txt
 
 networks:
   inception:
 
 volumes:
   db_data:
+      driver: local
+      driver_opts:
+        type: none
+        o: bind
+        device: /home/YOUR_LOGIN/data/mariadb
