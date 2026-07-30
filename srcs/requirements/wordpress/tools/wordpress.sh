@@ -6,7 +6,7 @@ done
 
 if [ ! -f /var/www/html/wp-config.php ]; then
 
-    wp core download --path=/var/www/html --allow-root
+    wp core download --path=/var/www/html --force --allow-root
 
     wp config create \
         --path=/var/www/html \
@@ -35,5 +35,6 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 
     chown -R www-data:www-data /var/www/html
 fi
+
 
 exec php-fpm8.2 -F

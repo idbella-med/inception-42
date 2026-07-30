@@ -1,6 +1,6 @@
 NAME = inception
 COMPOSE = docker compose -f srcs/docker-compose.yml
-LOGIN = mohidbel
+LOGIN = mohamed
 
 all: up
 
