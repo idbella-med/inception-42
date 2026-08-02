@@ -1,6 +1,6 @@
 #!/bin/bash
 
-until mysqladmin ping -h "mariadb" -u"${MYSQL_USER}" -p"${MYSQL_PASSWORD}" --silent; do
+until mysqladmin ping -h "mariadb" --silent; do
     sleep 1
 done
 

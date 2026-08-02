@@ -2,7 +2,7 @@ services:
   mariadb:
     build:
       context: ./requirements/mariadb
-    image: mariadb
+    image: mariadb:maraidb
     container_name: mariadb
     restart: on-failure
     networks:
@@ -15,7 +15,7 @@ services:
   wordpress:
     build:
       context: ./requirements/wordpress
-    image: wordpress
+    image: wordpress:wordpress
     container_name: wordpress
     restart: on-failure
     depends_on:
@@ -30,7 +30,7 @@ services:
   nginx:
     build:
       context: ./requirements/nginx
-    image: nginx
+    image: nginx:nginx
     container_name: nginx
     restart: on-failure
     depends_on:

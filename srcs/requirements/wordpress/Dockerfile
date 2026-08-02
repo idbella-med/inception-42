@@ -1,7 +1,7 @@
 FROM debian:bookworm
 
 RUN apt update && apt install -y \
-    php-fpm php-mysql php-curl php-xml php-gd php-zip php-mbstring \
+    php-fpm php-mysql \
     curl mariadb-client
 
 RUN curl -o /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
